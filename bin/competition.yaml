@@ -3,7 +3,7 @@ teams:
 - name: WhiteTeam
   color: White
   users:
-  - username: whiteteamuser
+  - username: OrlandoAdmin
     password: testpass
 - name: RedTeam
   color: Red
