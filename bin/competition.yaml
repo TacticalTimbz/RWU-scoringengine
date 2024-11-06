@@ -3,13 +3,13 @@ teams:
 - name: WhiteTeam
   color: White
   users:
-  - username: OrlandoAdmin
+  - username: orlandoadmin
     password: yeet
 - name: RedTeam
   color: Red
   users:
-  - username: redteamuser
-    password: testpass
+  - username: orlandoredteam
+    password: yeet
 - name: RWU NECCDC Practice
   color: Blue
   users:
