@@ -17,7 +17,7 @@ teams:
     password: RWUCyberComp!
   services:
   - name: ICMP
-    check_name: ICMPCheck
+    check_name: ICMPCheck 
     host: 172.16.128.11
     port: 0
     points: 25
@@ -139,20 +139,20 @@ teams:
     port: 445
     points: 100
     accounts:
-    - username: ttesterson
-      password: test
+    - username: black_team
+      password: qwerty12345!@#$%
     environments:
     - matching_content: "^SUCCESS"
       properties:
       - name: remote_name
-        value: COMPUTERNAME
+        value: 172.16.128.10
       - name: share
-        value: ScoredShare
+        value: YeetShare
       - name: file
         value: flag.txt
       # SHA256 hash of file
       - name: hash
-        value: 3ac8347c1130bd1ffe9078f99be6cb690baedd9e5552de0f7140c0daded7e1fa
+        value: 9F28CA60126CB0C438BC90F6D323EFB4ABF699F976C18A7A88CDB166E45E22EC
   - name: DNS
     check_name: DNSCheck
     host: 172.16.128.100
