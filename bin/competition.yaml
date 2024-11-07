@@ -135,7 +135,7 @@ teams:
         value: Sample file contents
   - name: SMB
     check_name: SMBCheck
-    host: testbed_smb
+    host: 172.16.128.10
     port: 445
     points: 100
     accounts:
@@ -145,7 +145,7 @@ teams:
     - matching_content: "^SUCCESS"
       properties:
       - name: remote_name
-        value: 172.16.128.10
+        value: FILE-01
       - name: share
         value: YeetShare
       - name: file
