@@ -145,7 +145,7 @@ teams:
     - matching_content: "^SUCCESS"
       properties:
       - name: remote_name
-        value: FILE-01
+        value: 172.16.128.10
       - name: share
         value: YeetShare
       - name: file
