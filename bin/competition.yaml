@@ -152,7 +152,7 @@ teams:
         value: flag.txt
       # SHA256 hash of file
       - name: hash
-        value: 9F28CA60126CB0C438BC90F6D323EFB4ABF699F976C18A7A88CDB166E45E22EC
+        value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
   - name: DNS
     check_name: DNSCheck
     host: 172.16.128.100
