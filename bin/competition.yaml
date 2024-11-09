@@ -38,21 +38,6 @@ teams:
         value: information_schema
       - name: command
         value: show tables;
-  - name: MSSQL
-    check_name: MSSQLCheck
-    host: testbed_mssql
-    port: 1433
-    points: 100
-    accounts:
-    - username: sa
-      password: yourStrong(!)Password
-    environments:
-    - matching_content: Microsoft SQL Server 2017
-      properties:
-      - name: database
-        value: master
-      - name: command
-        value: SELECT @@version;
   - name: FTP
     check_name: FTPCheck
     host: testbed_ftp
