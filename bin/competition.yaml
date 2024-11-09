@@ -17,8 +17,8 @@ teams:
     password: yeet
   services:
   - name: ICMP
-    check_name: ICMPCheck
-    host: testbed_icmp
+    check_name: ICMPCheck 
+    host: 172.16.128.11
     port: 0
     points: 25
     environments:
