@@ -23,3 +23,47 @@ teams:
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
+    - name: DNS
+    check_name: DNSCheck
+    host: 172.16.128.100
+    port: 53
+    points: 100
+    environments:
+    - matching_content: 'status: NOERROR'
+      properties:
+      - name: qtype
+        value: A
+      - name: domain
+        value: securenetwork.net
+    - matching_content: 'status: NOERROR'
+      properties:
+      - name: qtype
+        value: AAAA
+      - name: domain
+        value: securenetwork.net
+    - matching_content: 'status: NOERROR'
+      properties:
+      - name: qtype
+        value: A
+      - name: domain
+        value: securenetwork.net
+  - name: SMB
+    check_name: SMBCheck
+    host: 172.16.128.10
+    port: 445
+    points: 100
+    accounts:
+    - username: black_team
+      password: qwerty12345!@#$%
+    environments:
+    - matching_content: "^SUCCESS"
+      properties:
+      - name: remote_name
+        value: 172.16.128.10
+      - name: share
+        value: YeetShare
+      - name: file
+        value: flag.txt
+      # SHA256 hash of file
+      - name: hash
+        value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
