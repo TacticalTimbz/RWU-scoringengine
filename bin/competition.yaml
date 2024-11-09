@@ -167,7 +167,7 @@ teams:
         value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
   - name: DNS
     check_name: DNSCheck
-    host: testbed_dns
+    host: 172.16.128.100
     port: 53
     points: 100
     environments:
@@ -176,19 +176,19 @@ teams:
       - name: qtype
         value: A
       - name: domain
-        value: www.team.scoringengine
+        value: securenetwork.net
     - matching_content: 'status: NOERROR'
       properties:
       - name: qtype
         value: AAAA
       - name: domain
-        value: www.team.scoringengine
+        value: securenetwork.net
     - matching_content: 'status: NOERROR'
       properties:
       - name: qtype
         value: A
       - name: domain
-        value: anotherhost.team.scoringengine
+        value: securenetwork.net
   - name: OpenVPN
     check_name: OpenVPNCheck
     host: testbed_openvpn
