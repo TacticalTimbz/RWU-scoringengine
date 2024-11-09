@@ -92,18 +92,6 @@ teams:
         value: "/ftp_files/testfile.txt"
       - name: filecontents
         value: Sample file contents
-  - name: Elasticsearch
-    check_name: ElasticsearchCheck
-    host: testbed_elasticsearch
-    port: 9200
-    points: 100
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: index
-        value: messages
-      - name: doc_type
-        value: sample_message
   - name: SMB
     check_name: SMBCheck
     host: 172.16.128.10
