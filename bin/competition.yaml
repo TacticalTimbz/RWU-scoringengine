@@ -14,7 +14,7 @@ teams:
   color: Blue
   users:
   - username: RWUPractice
-    password: RWUCyberComp!
+    password: yeet
   services:
   - name: ICMP
     check_name: ICMPCheck
