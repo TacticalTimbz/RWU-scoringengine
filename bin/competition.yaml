@@ -106,24 +106,24 @@ teams:
         value: sample_message
   - name: SMB
     check_name: SMBCheck
-    host: testbed_smb
+    host: 172.16.128.10
     port: 445
     points: 100
     accounts:
-    - username: ttesterson
-      password: test
+    - username: black_team
+      password: qwerty12345!@#$%
     environments:
     - matching_content: "^SUCCESS"
       properties:
       - name: remote_name
-        value: COMPUTERNAME
+        value: 172.16.128.10
       - name: share
-        value: ScoredShare
+        value: YeetShare
       - name: file
         value: flag.txt
       # SHA256 hash of file
       - name: hash
-        value: 3ac8347c1130bd1ffe9078f99be6cb690baedd9e5552de0f7140c0daded7e1fa
+        value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
   - name: DNS
     check_name: DNSCheck
     host: 172.16.128.100
