@@ -25,7 +25,7 @@ def check_smb(host, port, share_name, file_name, username, password, remote_name
                     temp_file.seek(0)
                     data = temp_file.read()
                     hash_obj = hashlib.sha256(data)
-                    if hash_obj.hexdigest() == hash_to_test:
+                    if hash_obj.hexdigest().lower() == hash_to_test:
                         print('SUCCESS')
                         return
     except Exception as e:
