@@ -29,8 +29,8 @@ teams:
     port: 3306
     points: 100
     accounts:
-    - username: user1
-      password: CHANGEME
+    - username: black_team
+      password: QWERTY12345!@#
     environments:
     - matching_content: USER_PRIVILEGES
       properties:
