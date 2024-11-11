@@ -60,7 +60,7 @@ teams:
     points: 100
     accounts:
     - username: black_team
-      password: qwerty12345!@#$%
+      password: zanycave79!!!
     environments:
     - matching_content: "^SUCCESS"
       properties:
