@@ -40,21 +40,19 @@ teams:
         value: show tables;
   - name: FTP
     check_name: FTPCheck
-    host: testbed_ftp
-    port: 21
+    host: 172.16.128.30
+    port: 20
     points: 150
     accounts:
-    - username: ttesterson
-      password: testpass
-    - username: rpeterson
-      password: otherpass
+    - username: black_team
+      password: qwerty12345!@#
     environments:
     - matching_content: "^SUCCESS"
       properties:
       - name: remotefilepath
-        value: "/ftp_files/testfile.txt"
+        value: "/neccdc_check/flag.txt"
       - name: filecontents
-        value: Sample file contents
+        value: New York
   - name: SMB
     check_name: SMBCheck
     host: 172.16.128.10
