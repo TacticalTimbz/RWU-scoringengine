@@ -50,7 +50,7 @@ teams:
     - matching_content: "^SUCCESS"
       properties:
       - name: remotefilepath
-        value: "/neccdc_check/flag.txt"
+        value: "/home/black_team/neccdc_check/flag.txt"
       - name: filecontents
         value: New York
   - name: SMB
