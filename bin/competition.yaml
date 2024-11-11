@@ -25,7 +25,7 @@ teams:
     - matching_content: 1 packets transmitted, 1 received
   - name: MySQL
     check_name: MYSQLCheck
-    host: testbed_mysql
+    host: 172.16.128.31
     port: 3306
     points: 100
     accounts:
