@@ -99,7 +99,7 @@ teams:
         value: securenetwork.net
   - name: HTTP
     check_name: HTTPCheck
-    host: testbed_web
+    host: 172.16.128.31
     port: 80
     points: 100
     environments:
