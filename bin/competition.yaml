@@ -110,7 +110,7 @@ teams:
       - name: vhost
         value: 172.16.128.31
       - name: uri
-        value: http://172.16.128.31
+        value:
 flags:
   - type: file
     platform: nix
