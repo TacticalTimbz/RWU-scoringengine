@@ -10,7 +10,7 @@ teams:
   users:
   - username: orlandoredteam
     password: yeet
-- name: RWU NECCDC Practice
+- name: RWUNECCDCPractice
   color: Blue
   users:
   - username: RWUPractice
