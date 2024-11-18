@@ -113,7 +113,7 @@ teams:
         value:
   - name: WinRM
     check_name: WinRMCheck
-    host: 172.16.128.100
+    host: DC-01
     port: 0
     points: 100
     accounts:
