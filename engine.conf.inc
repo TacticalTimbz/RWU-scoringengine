@@ -1,6 +1,6 @@
 [OPTIONS]
 checks_location = scoring_engine/checks
-target_round_time = 15
+target_round_time = 30
 worker_refresh_time = 15
 engine_paused = False
 pause_duration = 30
