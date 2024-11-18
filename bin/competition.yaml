@@ -110,7 +110,7 @@ teams:
       - name: vhost
         value: 172.16.128.31
       - name: uri
-        value: test
+        value: /about.html
   - name: WinRM
     check_name: WinRMCheck
     host: DC-01
