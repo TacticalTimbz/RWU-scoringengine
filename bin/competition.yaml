@@ -10,6 +10,11 @@ teams:
   users:
   - username: orlandoredteam
     password: yeet
+- name: RWU NECCDC Practice
+  color: Blue
+  users:
+  - username: RWUPractice
+    password: yeet
   services:
   - name: ICMP
     check_name: ICMPCheck 
@@ -114,7 +119,7 @@ teams:
     accounts:
     - username: black_team
       password: zanycave79!!!
-   environments:
+    environments:
     - matching_content: "^SUCCESS"
       properties:
       - name: commands
