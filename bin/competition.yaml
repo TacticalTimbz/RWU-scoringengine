@@ -10,11 +10,6 @@ teams:
   users:
   - username: orlandoredteam
     password: yeet
-- name: RWUNECCDCPractice
-  color: Blue
-  users:
-  - username: RWUPractice
-    password: yeet
   services:
   - name: ICMP
     check_name: ICMPCheck 
