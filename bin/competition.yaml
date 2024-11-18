@@ -103,7 +103,7 @@ teams:
     port: 80
     points: 100
     environments:
-    - matching_content: Connected to 172.16.128.31 (172.16.128.31) port 80 (#0)
+    - matching_content: <style>
       properties:
       - name: useragent
         value: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
