@@ -111,19 +111,6 @@ teams:
         value: 172.16.128.31
       - name: uri
         value: /about.html
-  - name: WinRM
-    check_name: WinRMCheck
-    host: DC-01
-    port: 0
-    points: 100
-    accounts:
-    - username: black_team
-      password: zanycave79!!!
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: commands
-        value: ipconfig /all;whoami
 flags:
   - type: file
     platform: nix
