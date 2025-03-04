@@ -14,7 +14,9 @@ import smbclient
 
 
 def check_smb(host, port, share_name, file_name, username, password, remote_name, hash_to_test):
-
+    print(host)
+    print(username)
+    print(password)
     smbclient.register_session(host, username=username, password=password)
     smbclient.mkdir(f"\\{host}\\{share_name}\\{file_name}", username=username, password=password)
     #     conn = SMBConnection(username, password, 'name', remote_name, use_ntlm_v2=True, is_direct_tcp=True)
