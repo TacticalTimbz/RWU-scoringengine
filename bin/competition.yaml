@@ -83,7 +83,7 @@ teams:
       - name: share
         value: YeetShare
       - name: file
-        value: flag.txt
+        value: flag
       # SHA256 hash of file
       - name: hash
         value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
