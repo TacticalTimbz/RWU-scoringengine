@@ -35,7 +35,7 @@ RUN pip install -I "requests>=2.32.3,<2.33"
 # SMB Check
 RUN pip install -I "pysmb>=1.2,<1.3"
 
-RUN pip install smbclient
+RUN pip install smbprotocol
 
 # DNS Check
 RUN apt-get install -y dnsutils
