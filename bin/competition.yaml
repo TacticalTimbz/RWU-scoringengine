@@ -73,7 +73,7 @@ teams:
     port: 445
     points: 100
     accounts:
-    - username: black_team
+    - username: securenetwork\black_team
       password: zanycave79!!!
     environments:
     - matching_content: "^SUCCESS"

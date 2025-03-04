@@ -15,12 +15,6 @@ host = sys.argv[1]
 remote_filepath = sys.argv[2]
 upload_file_contents = sys.argv[3]
 
-print("====================================================")
-print(host)
-print(remote_filepath)
-print(upload_file_contents)
-print("====================================================")
-
 # Connect and Upload file to server
 try:
     nfs = libnfs.open('nfs://{0}{1}'.format(host, remote_filepath), mode='w')
