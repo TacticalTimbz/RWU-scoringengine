@@ -75,7 +75,7 @@ teams:
         value: show tables;
   - name: FTP
     check_name: FTPCheck
-    host: 172.16.128.30
+    host: 172.16.128.14
     port: 21
     points: 150
     accounts:
