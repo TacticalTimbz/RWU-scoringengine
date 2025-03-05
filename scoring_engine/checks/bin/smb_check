@@ -14,7 +14,7 @@ import hashlib
 def check_smb(host, port, share_name, file_name, username, password, remote_name, hash_to_test):
     try:
         conn = SMBConnection(username, password, 'name', remote_name,
-                             use_ntlm_v2=True, is_direct_tcp=True)
+                             use_ntlm_v2=True, is_direct_tcp=False)
         conn.connect(host, int(port))
         shares = conn.listShares()
 
