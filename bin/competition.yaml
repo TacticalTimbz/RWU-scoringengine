@@ -16,44 +16,44 @@ teams:
   - username: RWUPractice
     password: yeet
   services:
-  - name: ICMP
+  - name: ICMP 172.16.128.10
     check_name: ICMPCheck 
     host: 172.16.128.10
     port: 0
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP
+  - name: ICMP 172.16.128.11
     check_name: ICMPCheck 
     host: 172.16.128.11
     port: 0
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP
+  - name: ICMP 172.16.128.12
     check_name: ICMPCheck 
     host: 172.16.128.12
     port: 0
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP
+  - name: ICMP 172.16.128.13
     check_name: ICMPCheck 
     host: 172.16.128.13
     port: 0
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP
+  - name: ICMP 172.16.128.14
     check_name: ICMPCheck 
     host: 172.16.128.14
     port: 0
     points: 25
     environments:
     - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP
+  - name: ICMP 172.16.128.15
     check_name: ICMPCheck 
-    host: 172.16.128.12
+    host: 172.16.128.15
     port: 0
     points: 25
     environments:
