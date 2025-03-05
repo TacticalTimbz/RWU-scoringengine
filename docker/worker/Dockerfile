@@ -36,7 +36,7 @@ RUN pip install -I "requests>=2.32.3,<2.33"
 RUN pip install -I "pysmb>=1.2,<1.3"
 
 RUN apt-get install -y gcc python-dev libkrb5-dev
-RUN apt-get install -y smbprotocol[kerberos]
+RUN pip install smbprotocol[kerberos]
 
 # DNS Check
 RUN apt-get install -y dnsutils
