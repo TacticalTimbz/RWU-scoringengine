@@ -88,26 +88,6 @@ teams:
         value: "/home/black_team/neccdc_check/flag.txt"
       - name: filecontents
         value: New York
-  - name: SMB
-    check_name: SMBCheck
-    host: 172.16.128.10
-    port: 445
-    points: 100
-    accounts:
-    - username: black_team
-      password: zanycave79!!!
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: remote_name
-        value: 172.16.128.10
-      - name: share
-        value: YeetShare
-      - name: file
-        value: flag
-      # SHA256 hash of file
-      - name: hash
-        value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
   - name: DNS
     check_name: DNSCheck
     host: 172.16.128.100
@@ -146,18 +126,6 @@ teams:
         value: 172.16.128.31
       - name: uri
         value: /about.html
-  - name: NFS
-    check_name: NFSCheck
-    host: 172.16.128.15
-    port: 0
-    points: 100
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: remotefilepath
-        value: "/var/nfs_files/myfile.txt"
-      - name: filecontents
-        value: yeet
     
 flags:
   - type: file
