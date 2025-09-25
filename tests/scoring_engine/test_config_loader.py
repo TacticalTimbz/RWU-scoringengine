@@ -4,7 +4,7 @@ from scoring_engine.config_loader import ConfigLoader
 
 
 class TestConfigLoader(object):
-    def setup(self):
+    def setup_method(self):
         self.config = ConfigLoader(location="../tests/scoring_engine/engine.conf.inc")
 
     def test_debug(self):
@@ -16,8 +16,29 @@ class TestConfigLoader(object):
     def test_target_round_time(self):
         assert self.config.target_round_time == 180
 
+    def test_agent_psk(self):
+        assert self.config.agent_psk == "TheCakeIsALie"
+
+    def test_agent_show_flag_early_mins(self):
+        assert self.config.agent_show_flag_early_mins == 5
+
     def test_worker_refresh_time(self):
         assert self.config.worker_refresh_time == 30
+
+    def test_blue_team_update_hostname(self):
+        assert self.config.blue_team_update_hostname is True
+
+    def test_blue_team_update_port(self):
+        assert self.config.blue_team_update_port is True
+
+    def test_blue_team_update_account_usernames(self):
+        assert self.config.blue_team_update_account_usernames is True
+
+    def test_blue_team_update_account_passwords(self):
+        assert self.config.blue_team_update_account_passwords is True
+
+    def test_blue_team_view_check_output(self):
+        assert self.config.blue_team_view_check_output is True
 
     def test_db_uri(self):
         assert self.config.db_uri == "sqlite:////tmp/test_engine.db?check_same_thread=False"
@@ -60,3 +81,15 @@ class TestConfigLoader(object):
     def test_parse_sources_str_environment(self):
         os.environ["SCORINGENGINE_REDIS_HOST"] = "127.0.0.1"
         assert self.config.parse_sources("redis_host", "1.2.3.4") == "127.0.0.1"
+
+
+def test_default_uses_example_config():
+    """Ensure ConfigLoader falls back to the bundled example config.
+
+    In environments where ``engine.conf`` is not present (like CI), the
+    loader should automatically read ``engine.conf.inc`` so that sensible
+    defaults are available and tests can execute.
+    """
+    cfg = ConfigLoader()  # no explicit path provided
+    # A value from engine.conf.inc confirms the fallback worked
+    assert cfg.db_uri == "sqlite:////tmp/engine.db?check_same_thread=False"

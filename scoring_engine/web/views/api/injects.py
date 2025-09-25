@@ -19,7 +19,7 @@ from . import make_cache_key, mod
 @mod.route("/api/injects")
 @login_required
 def api_injects():
-    team = session.query(Team).get(current_user.team.id)
+    team = session.get(Team, current_user.team.id)
     if team is None or not current_user.team == team or not (current_user.is_blue_team or current_user.is_red_team):
         return jsonify({"status": "Unauthorized"}), 403
     data = list()
@@ -51,7 +51,7 @@ def api_injects():
 @mod.route("/api/inject/<inject_id>/submit", methods=["POST"])
 @login_required
 def api_injects_submit(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject.team is None or not current_user.team == inject.team or not current_user.is_blue_team:
         return jsonify({"status": "Unauthorized"}), 403
     if datetime.utcnow() > inject.template.end_time:
@@ -66,7 +66,7 @@ def api_injects_submit(inject_id):
 @mod.route("/api/inject/<inject_id>/upload", methods=["POST"])
 @login_required
 def api_injects_file_upload(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject.team is None or not current_user.team == inject.team or not current_user.is_blue_team:
         return jsonify({"status": "Unauthorized"}), 403
 
@@ -82,8 +82,8 @@ def api_injects_file_upload(inject_id):
 
     files = request.files.getlist("file")
     for file in files:
-        filename = secure_filename(file.filename)
-        path = os.path.join(config.upload_folder, current_user.team.name)
+        filename = "Inject" + str(inject_id) + "_" + current_user.team.name + "_" + secure_filename(file.filename)
+        path = os.path.join(config.upload_folder, inject_id, current_user.team.name)
 
         if not os.path.exists(path):
             os.makedirs(path)
@@ -106,7 +106,7 @@ def api_injects_file_upload(inject_id):
 @cache.cached(make_cache_key=make_cache_key)
 @login_required
 def api_inject(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject is None or not (current_user.team == inject.team or current_user.is_white_team):
         return jsonify({"status": "Unauthorized"}), 403
 
@@ -139,7 +139,7 @@ def api_inject(inject_id):
 @cache.cached(make_cache_key=make_cache_key)
 @login_required
 def api_inject_comments(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject is None or not (current_user.team == inject.team or current_user.is_white_team):
         return jsonify({"status": "Unauthorized"}), 403
 
@@ -163,7 +163,7 @@ def api_inject_comments(inject_id):
 @mod.route("/api/inject/<inject_id>/comment", methods=["POST"])
 @login_required
 def api_inject_add_comment(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject is None or not (current_user.team == inject.team or current_user.is_white_team):
         return jsonify({"status": "Unauthorized"}), 403
     if datetime.utcnow() > inject.template.end_time:
@@ -178,7 +178,7 @@ def api_inject_add_comment(inject_id):
     session.commit()
 
     # Delete comment cache for inject
-    cache.delete(f"/api/inject/{inject_id}/comment_{g.user.team.id}")
+    cache.delete(f"/api/inject/{inject_id}/comments_{g.user.team.id}")
 
     return jsonify({"status": "Comment added"}), 200
 
@@ -187,7 +187,7 @@ def api_inject_add_comment(inject_id):
 @cache.cached(make_cache_key=make_cache_key)
 @login_required
 def api_inject_files(inject_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject is None or not (current_user.team == inject.team or current_user.is_white_team):
         return jsonify({"status": "Unauthorized"}), 403
 
@@ -206,7 +206,7 @@ def api_inject_files(inject_id):
 @mod.route("/api/inject/<inject_id>/files/<file_id>/download")
 @login_required
 def api_inject_download(inject_id, file_id):
-    inject = session.query(Inject).get(inject_id)
+    inject = session.get(Inject, inject_id)
     if inject is None or not (current_user.team == inject.team or current_user.is_white_team):
         return jsonify({"status": "Unauthorized"}), 403
 
@@ -215,7 +215,7 @@ def api_inject_download(inject_id, file_id):
     if file is None:
         return jsonify({"status": "Unauthorized"}), 403
 
-    path = os.path.join(config.upload_folder, inject.team.name, file.name)
+    path = os.path.join(config.upload_folder, inject_id, inject.team.name, file.name)
     print(path)
     try:
         return send_file(path, as_attachment=True)

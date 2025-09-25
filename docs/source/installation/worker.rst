@@ -91,7 +91,8 @@ Install dependencies for RDP check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-  apt-get install -y freerdp-x11
+  # Package name changed in newer distributions
+  apt-get install -y freerdp2-x11 || apt-get install -y freerdp3-x11 || apt-get install -y freerdp
 
 Install dependencies for MSSQL check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,8 +119,7 @@ Install dependencies for NFS check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-  apt-get install -y libnfs-dev
-  source /home/engine/scoring_engine/env/bin/activate && pip install -I "libnfs==1.0.post4"
+  apt-get install -y nfs-common
 
 Install dependencies for OpenVPN check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

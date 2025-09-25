@@ -4,7 +4,7 @@ import logging
 from flask import Flask
 from flask_login import LoginManager
 
-from scoring_engine.cache import cache
+from scoring_engine.cache import cache, agent_cache
 from scoring_engine.config import config
 
 
@@ -39,6 +39,7 @@ def create_app():
     )
 
     cache.init_app(app)
+    agent_cache.init_app(app)
 
     # Initialize login manager
     login_manager = LoginManager()
@@ -53,7 +54,7 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
-        return session.query(User).get(int(user_id))
+        return session.get(User, int(user_id))
 
     app.register_blueprint(welcome.mod)
     app.register_blueprint(services.mod)
