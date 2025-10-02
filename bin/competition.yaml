@@ -16,153 +16,108 @@ teams:
   - username: RWUPractice
     password: yeet
   services:
-  - name: ICMP 172.16.128.10
+  - name: ICMP 172.16.128.100
     check_name: ICMPCheck 
-    host: 172.16.128.10
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP 172.16.128.11
-    check_name: ICMPCheck 
-    host: 172.16.128.11
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP 172.16.128.12
-    check_name: ICMPCheck 
-    host: 172.16.128.12
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP 172.16.128.13
-    check_name: ICMPCheck 
-    host: 172.16.128.13
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP 172.16.128.14
-    check_name: ICMPCheck 
-    host: 172.16.128.14
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: ICMP 172.16.128.15
-    check_name: ICMPCheck 
-    host: 172.16.128.15
-    port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: MySQL
-    check_name: MYSQLCheck
-    host: 172.16.128.31
-    port: 3306
-    points: 100
-    accounts:
-    - username: myadmin
-      password: admin
-    environments:
-    - matching_content: USER_PRIVILEGES
-      properties:
-      - name: database
-        value: information_schema
-      - name: command
-        value: show tables;
-  - name: FTP
-    check_name: FTPCheck
-    host: 172.16.128.14
-    port: 21
-    points: 150
-    accounts:
-    - username: black_team
-      password: qwerty12345!@#$%
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: remotefilepath
-        value: "/home/black_team/neccdc_check/flag.txt"
-      - name: filecontents
-        value: New York
-  - name: SMB
-    check_name: SMBCheck
-    host: 172.16.128.10
-    port: 445
-    points: 100
-    accounts:
-    - username: black_team
-      password: zanycave79!!!
-    environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: remote_name
-        value: 172.16.128.10
-      - name: share
-        value: YeetShare
-      - name: file
-        value: flag
-      # SHA256 hash of file
-      - name: hash
-        value: FC24A33774E116B429F77903A22E8DFF90D487E4C91864B2D0E0590AA3F9CEA0
-  - name: DNS
-    check_name: DNSCheck
     host: 172.16.128.100
-    port: 53
-    points: 100
-    environments:
-    - matching_content: 'status: NOERROR'
-      properties:
-      - name: qtype
-        value: A
-      - name: domain
-        value: securenetwork.net
-    - matching_content: 'status: NOERROR'
-      properties:
-      - name: qtype
-        value: AAAA
-      - name: domain
-        value: securenetwork.net
-    - matching_content: 'status: NOERROR'
-      properties:
-      - name: qtype
-        value: A
-      - name: domain
-        value: securenetwork.net
-  - name: HTTP
-    check_name: HTTPCheck
-    host: 172.16.128.31
-    port: 80
-    points: 100
-    environments:
-    - matching_content: <style>
-      properties:
-      - name: useragent
-        value: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
-      - name: vhost
-        value: 172.16.128.31
-      - name: uri
-        value: /about.html
-  - name: NFS
-    check_name: NFSCheck
-    host: 172.16.128.15
     port: 0
-    points: 100
+    points: 25
     environments:
-    - matching_content: "^SUCCESS"
-      properties:
-      - name: remotefilepath
-        value: "/var/nfs_files/myfile.txt"
-      - name: filecontents
-        value: yeet
-    
-flags:
-  - type: file
-    platform: nix
-    perm: user
-    data:
-        path: "/tmp/flag"
-        content: "hi"
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.101
+    check_name: ICMPCheck 
+    host: 172.16.128.101
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.102
+    check_name: ICMPCheck 
+    host: 172.16.128.102
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.103
+    check_name: ICMPCheck 
+    host: 172.16.128.103
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.104
+    check_name: ICMPCheck 
+    host: 172.16.128.104
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.105
+    check_name: ICMPCheck 
+    host: 172.16.128.105
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.106
+    check_name: ICMPCheck 
+    host: 172.16.128.106
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.107
+    check_name: ICMPCheck 
+    host: 172.16.128.107
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.108
+    check_name: ICMPCheck 
+    host: 172.16.128.108
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.109
+    check_name: ICMPCheck 
+    host: 172.16.128.109
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.110
+    check_name: ICMPCheck 
+    host: 172.16.128.110
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.111
+    check_name: ICMPCheck 
+    host: 172.16.128.111
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.112
+    check_name: ICMPCheck 
+    host: 172.16.128.112
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.113
+    check_name: ICMPCheck 
+    host: 172.16.128.113
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
+  - name: ICMP 172.16.128.114
+    check_name: ICMPCheck 
+    host: 172.16.128.114
+    port: 0
+    points: 25
+    environments:
+    - matching_content: 1 packets transmitted, 1 received
